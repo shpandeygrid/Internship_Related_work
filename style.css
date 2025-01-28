@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*Ensures that padding and margin included in 
+                            the elements total width and height*/
+}
+body{
+    font-family: "latto",sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 400;
+    color: #777;
+    padding:30px
+}
+
+.header{
+     height: 95vh;
+
+     background-image: linear-gradient(to right,
+     #7ed56f48,
+     #28b485d4),
+     url(./img/hero-small.jpg);
+
+     background-size: cover;
+     background-position: top;
+
+     clip-path: polygon(0 0,100% 0,100% 75%,0 100%);
+     /* clip-path: polygon(0 0,100% 50%,100% 50%,0 100%); */
+
+     position: relative;
+}
+
+.logo-box{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo{
+     height: 35px;
+}
+
+.logo:hover{
+    animation: moveinRight 3s ease-out;
+}
+
+.heading-primary{
+      color: white;
+      backface-visibility: hidden;
+}
+.heading-primary-main{
+      display: block;
+      font-size: 60px;
+      letter-spacing: 35px;
+      font-weight: 400px;
+
+      animation-name: moveinLeft;
+      animation-duration: 3s;
+      animation-timing-function: ease-out;
+      /* animation-delay: 3s;
+      animation-iteration-count: 1e8;
+      */
+}
+.heading-primary-sub{
+      display: block;
+      font-size: 20px;
+      letter-spacing: 17.4px;
+      font-weight: 700px;
+      
+      margin-bottom: 60px; /* To provide space between button and text*/
+
+      animation-name: moveinRight;
+      animation-duration: 3s;
+      animation-timing-function: ease-out;
+}
+.text-box{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /*These are in relation to the parent element*/
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+/* Animations */
+@keyframes moveinLeft{
+     0% {
+         opacity: 0;
+         transform: translateX(-100px);
+     }
+     /*
+     50%{
+         transform : rotate(180deg);
+     }
+     */
+     80% {
+        transform: translateX(10px);
+     }
+     100% {
+        opacity: 1;
+        transform: translateX(0);
+     }
+}
+@keyframes moveinRight{
+     0% {
+         opacity: 0;
+         transform: translateX(100px);
+     }
+     80% {
+        transform: translateX(-10px);
+     }
+     100% {
+        opacity: 1;
+        transform: translateX(0);
+     }
+}
+
+.btn:link,
+.btn:visited{
+     text-transform: uppercase;
+     text-decoration: none;
+     padding : 15px 40px;
+     display: inline-block;
+     border-radius: 100px;
+}
+.btn-white{
+    background-color: white;
+}
+.btn:hover{
+    transform: translateY(-3px);
+}
+.btn:active{
+    transform: translateY(-1px);
+}
