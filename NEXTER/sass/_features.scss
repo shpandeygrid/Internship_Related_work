@@ -1,0 +1,41 @@
+    // media-query-less responsiveness is achieved using the repeat() 
+    // function and the auto-placement keywords.
+
+    //auto-fill FILLS the row with as many columns as it can fit.
+    // So it creates implicit columns whenever a new column can fit, because it’s trying
+    // to FILL the row with as many columns as it can.
+    // The newly added columns can and may be empty, but they will still occupy a 
+    //designated space in the row.
+
+    //auto-fit FITS the CURRENTLY AVAILABLE columns into the space by 
+    //expanding them so that they take up any available space. 
+    //The browser does that after FILLING that extra space with extra columns
+    // (as with auto-fill ) and then collapsing the empty ones.
+
+.features{
+    grid-column: center-start/center-end;
+    margin: 15rem 0;
+    display: grid;
+    //grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
+    grid-gap: 6rem;
+}
+.feature{
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 2.5rem;
+    align-items: start;
+
+    &__icon {
+        fill: $color-primary;
+        width: 4.5rem;
+        height: 4.5rem;
+        grid-row: 1/ span 2;
+        transform: translateY(-1rem);
+    }
+
+    &__text {
+        font-size: 1.7rem;
+    }
+}
